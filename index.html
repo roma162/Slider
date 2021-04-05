@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Slider</title>
+  </head>
+
+  <body>
+
+    <div class="wrapper">
+
+      <div class="topleft"></div>
+      <div class="topright"></div>
+
+      <div class="slider">
+        <div class="toprow">
+          <ul id="toplist">
+            <li><img src="images/slider-image-1.jpeg"></li>
+            <li><img src="images/slider-image-2.jpeg"></li>
+            <li><img src="images/slider-image-3.jpeg"></li>
+            <li><img src="images/slider-image-4.jpeg"></li>
+            <li><img src="images/slider-image-5.jpeg"></li>
+          </ul>
+        </div>
+
+        <div class="botrow">
+          <ul id="botlist">
+            <li><img src="images/slider-image-6.jpeg"></li>
+            <li><img src="images/slider-image-7.jpeg"></li>
+            <li><img src="images/slider-image-8.jpeg"></li>
+            <li><img src="images/slider-image-9.jpeg"></li>
+          </ul>
+
+          <div class="arrows">
+            <div class="up"></div>
+            <div class="down"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="textbox">
+        <h1>Lorem ipsum dolor sit amet consectetuer adipiscing elit</h1>
+        <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation
+           ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
+          consequat. Duis autem vel eum iriure dolor in hendrerit in
+           vulputate velit esse molestie consequat.</p>
+      </div>
+
+      <div class="footer"></div>
+
+    </div>
+
+    <script>
+
+      $(document).ready(function(){
+        $(".up").click(function(){
+          $('#toplist li:last-child').remove().prependTo('#toplist');
+          $('#botlist li:last-child').remove().prependTo('#botlist');
+        });
+        $(".down").click(function(){
+          $('#toplist li:first-child').remove().appendTo('#toplist');
+          $('#botlist li:first-child').remove().appendTo('#botlist');
+        });
+
+      });
+    </script>
+
+  </body>
+</html>
